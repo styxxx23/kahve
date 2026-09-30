@@ -1,5 +1,5 @@
 // BURAYA KENDİ E-POSTA ADRESİNİ YAZ:
-const OWNER_EMAIL = "SENIN_EPOSTA_ADRESIN@example.com";
+const OWNER_EMAIL = "ardadogan848@gmail.com";
 
 const messages=["Gerçekten emin misin? 🥺","Bir daha düşünsen? Kahve çok güzel olacak... ☕","Emin olduğuna gerçekten emin misin? 👀","Kalbin 'evet' diyor olabilir... ❤️","Son kararın mı? 🥹","Bak, kahve alacağız. Daha ne istiyorsun? ☕✨","Hayır demek için fazla tatlı bir akşam... 😌","Kahve ekibi seni bekliyor! 🫶"];
 const yes=document.getElementById("yes"),no=document.getElementById("no"),attempt=document.getElementById("attempt"),question=document.getElementById("question"),vote=document.getElementById("vote"),formCard=document.getElementById("formCard"),form=document.getElementById("form"),back=document.getElementById("back"),toast=document.getElementById("toast");
