@@ -1,0 +1,10 @@
+// BURAYA KENDİ E-POSTA ADRESİNİ YAZ:
+const OWNER_EMAIL = "SENIN_EPOSTA_ADRESIN@example.com";
+
+const messages=["Gerçekten emin misin? 🥺","Bir daha düşünsen? Kahve çok güzel olacak... ☕","Emin olduğuna gerçekten emin misin? 👀","Kalbin 'evet' diyor olabilir... ❤️","Son kararın mı? 🥹","Bak, kahve alacağız. Daha ne istiyorsun? ☕✨","Hayır demek için fazla tatlı bir akşam... 😌","Kahve ekibi seni bekliyor! 🫶"];
+const yes=document.getElementById("yes"),no=document.getElementById("no"),attempt=document.getElementById("attempt"),question=document.getElementById("question"),vote=document.getElementById("vote"),formCard=document.getElementById("formCard"),form=document.getElementById("form"),back=document.getElementById("back"),toast=document.getElementById("toast");
+let count=0;
+no.onclick=()=>{count++;attempt.textContent=messages[Math.min(count-1,messages.length-1)];question.textContent="Ama vazgeçmek yok, bir kez daha düşün. 😌";yes.style.transform=`scale(${Math.min(1+count*.12,2.05)})`;no.style.transform=`scale(${Math.max(1-count*.1,.42)})`;if(count>=4)no.textContent="Belki? 🥺";if(count>=7)no.style.opacity=".65"};
+yes.onclick=()=>{vote.classList.add("hidden");formCard.classList.remove("hidden");document.getElementById("name").focus()};
+back.onclick=()=>{formCard.classList.add("hidden");vote.classList.remove("hidden")};
+form.onsubmit=e=>{e.preventDefault();const name=document.getElementById("name").value.trim(),time=document.getElementById("time").value;if(!OWNER_EMAIL||OWNER_EMAIL.includes("SENIN_EPOSTA")){alert("Önce script.js içindeki OWNER_EMAIL kısmına kendi e-posta adresini yaz.");return}const subject=encodeURIComponent("☕ Kahve buluşması — "+name);const body=encodeURIComponent(`Kahve buluşmasına ${name} katılıyor!\n\nUygun saat: ${time}\n\nBu cevap kahve sitesinden gönderildi.`);window.location.href=`mailto:${OWNER_EMAIL}?subject=${subject}&body=${body}`;toast.textContent="E-posta uygulaman açılıyor ☕";toast.classList.add("show");setTimeout(()=>toast.classList.remove("show"),3000)};

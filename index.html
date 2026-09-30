@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bu akşam kahve içiyor muyuz? ☕</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app"><div class="coffee">☕</div><div class="spark">✦</div>
+<section class="card" id="vote">
+<div class="eyebrow">BU AKŞAM PLAN ☕</div>
+<h1>Bu akşam<br><span>kahve içiyor muyuz?</span></h1>
+<p class="subtitle" id="question">Hadi ama, kahve bizi bekliyor. 🥹</p>
+<div class="buttons"><button id="yes">Evet! ☕</button><button id="no">Hayır</button></div>
+<p class="attempt" id="attempt"></p>
+</section>
+<section class="card hidden" id="formCard">
+<div class="eyebrow">TAMAMDIR! ☕</div><h2>Ne zaman buluşuyoruz?</h2>
+<p class="subtitle">İsmini ve uygun saatini yaz. Cevabın doğrudan sana gönderilecek.</p>
+<form id="form">
+<label>İsmin</label><input id="name" required placeholder="Adın">
+<label>Saat</label><input id="time" type="time" required>
+<button class="save" type="submit">Cevabımı gönder ✨</button>
+</form>
+<p class="note">🔒 Diğer arkadaşların cevaplarını göremez.</p>
+<button class="back" id="back">← Geri dön</button>
+</section>
+</main>
+<div class="toast" id="toast"></div>
+<script src="script.js"></script>
+</body></html>
